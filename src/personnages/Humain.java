@@ -3,7 +3,7 @@ package personnages;
 public class Humain {
 	private String nom;
 	private String boisson; 
-	private int argent;
+	protected int argent;
 	
 	public Humain(String nom, String boisson, int argent) {
 		this.nom = nom;
@@ -11,7 +11,6 @@ public class Humain {
 		this.argent = argent;
 	}
 
-	
 	public String getNom() {
 		return nom;
 	}
@@ -20,7 +19,7 @@ public class Humain {
 		return argent;
 	}
 	
-	private void parler(String texte) {
+	protected void parler(String texte) {
 		System.out.println("(" + nom + ") - " + texte);
 	}
 	
@@ -44,6 +43,7 @@ public class Humain {
 	}
 	
 	public void gagnerArgent(int gain) {
+		parler(gain + " sous ! Je te remercie généreux donateur!");
 		this.argent = argent + gain;
 	}
 	
@@ -52,3 +52,6 @@ public class Humain {
 	}
 
 }
+
+//Solution 1 : mettre en protected
+//Solution 2 : utiliser un getArgent();
