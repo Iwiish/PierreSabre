@@ -13,9 +13,9 @@ public class Commercant extends Humain {
 		return oldargent;
 	}
 	
-	public void recevoir(int argent) {
-		
-	}
+//	public void recevoir(int argent) {
+//		
+//	}
 }
 
 //Un commerçant est un humain dont la boisson préférée est le thé. Il peut se faire
