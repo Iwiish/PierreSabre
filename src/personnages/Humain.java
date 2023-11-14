@@ -80,17 +80,17 @@ public class Humain {
 	
 	public void listerCo() {
 		int i = 0;
-		System.out.print("Je connais beaucoup de monde dont : ");
+		String coco = "";
+		coco += "Je connais beaucoup de monde dont : ";
 		while(i<nbCo) {
-			System.out.print(connaissances[i]);
-			
+			coco += connaissances[i];
 			if(nbCo>1 && i<nbCo-1) {
-				System.out.print(", ");
+				coco += ", ";
 			}
 			i++;
 		}
-		System.out.print(".");
-		System.out.println("");
+		coco += ".";
+		parler(coco);
 	}
 }
 
