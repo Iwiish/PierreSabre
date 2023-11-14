@@ -1,9 +1,11 @@
 package personnages;
 
 public class Humain {
-	private String nom;
+	protected String nom;
 	private String boisson; 
 	protected int argent;
+	protected int nbCo;
+	public String[] connaissances = new String[30]; 
 	
 	public Humain(String nom, String boisson, int argent) {
 		this.nom = nom;
@@ -51,6 +53,45 @@ public class Humain {
 		this.argent = argent - perte;
 	}
 
+	
+	public void faireConnaissanceAvec(Humain autreHumain) {
+		direBonjour();
+		autreHumain.repondre(this);
+		memoriser(autreHumain);
+		
+	}
+	
+	private void memoriser(Humain humain) {
+		if(nbCo == 30){
+			for(int a = 0; a<29; a++){
+				connaissances[a] = connaissances[a+1];
+			}
+			nbCo--;
+		}
+
+		connaissances[nbCo] = humain.getNom();
+		nbCo++;
+	}
+	
+	private void repondre(Humain humain) {
+		direBonjour();
+		memoriser(humain);
+	}
+	
+	public void listerCo() {
+		int i = 0;
+		System.out.print("Je connais beaucoup de monde dont : ");
+		while(i<nbCo) {
+			System.out.print(connaissances[i]);
+			
+			if(nbCo>1 && i<nbCo-1) {
+				System.out.print(", ");
+			}
+			i++;
+		}
+		System.out.print(".");
+		System.out.println("");
+	}
 }
 
 //Solution 1 : mettre en protected

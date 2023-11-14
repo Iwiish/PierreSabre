@@ -28,7 +28,7 @@ public class HistoireTP4 {
 //		(Marco) - 15 sous ! Je te remercie généreux donateur!
 //		(Marco) - Mmmm, un bon verre de thé ! GLOUPS !
 		
-		Commercant Marco = new Commercant("Marco", "thé", 20);
+		Commercant Marco = new Commercant("Marco", 20);
 		Marco.direBonjour();
 		Marco.seFaireExtorquer();
 		Marco.gagnerArgent(15);
@@ -43,7 +43,7 @@ public class HistoireTP4 {
 //		(Yaku Le Noir) - J’ai piqué les 15 sous de Marco, ce qui me fait 45 sous dans ma
 //		poche. Hi ! Hi !
 		
-		Yakuza Yaku = new Yakuza("Yaku Le Noir", "whiksy", 30, "Warsong", 0);
+		Yakuza Yaku = new Yakuza("Yaku Le Noir", "whiksy", 30, "Warsong");
 		Yaku.direBonjour();
 		Yaku.extorquerCommercant(Marco);
 		
